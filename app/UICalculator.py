@@ -1,10 +1,8 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'UICalculator.ui'
+# Author: Hernan Borges dos Santos
+# Used PyQt5 UI code generator 5.11.3
 #
-# Created by: PyQt5 UI code generator 5.11.3
-#
-# WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 import sys
@@ -13,12 +11,11 @@ from calculadora import Calculadora
 
 class Ui_Dialog(object):
     numberUsed = ''
-
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
-        Dialog.resize(384, 358)
+        Dialog.resize(378, 401)
         self.groupBox = QtWidgets.QGroupBox(Dialog)
-        self.groupBox.setGeometry(QtCore.QRect(10, 20, 361, 321))
+        self.groupBox.setGeometry(QtCore.QRect(10, 10, 361, 381))
         self.groupBox.setObjectName("groupBox")
         self.horizontalLayoutWidget = QtWidgets.QWidget(self.groupBox)
         self.horizontalLayoutWidget.setGeometry(QtCore.QRect(10, 20, 341, 80))
@@ -36,17 +33,17 @@ class Ui_Dialog(object):
         self.txt_result.setObjectName("txt_result")
         self.horizontalLayout.addWidget(self.txt_result)
         self.line_2 = QtWidgets.QFrame(self.groupBox)
-        self.line_2.setGeometry(QtCore.QRect(10, 110, 341, 20))
+        self.line_2.setGeometry(QtCore.QRect(0, 110, 361, 16))
         self.line_2.setFrameShape(QtWidgets.QFrame.HLine)
         self.line_2.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_2.setObjectName("line_2")
         self.gridLayoutWidget = QtWidgets.QWidget(self.groupBox)
-        self.gridLayoutWidget.setGeometry(QtCore.QRect(10, 130, 338, 174))
+        self.gridLayoutWidget.setGeometry(QtCore.QRect(10, 176, 341, 201))
         self.gridLayoutWidget.setObjectName("gridLayoutWidget")
         self.gridLayout = QtWidgets.QGridLayout(self.gridLayoutWidget)
         self.gridLayout.setSizeConstraint(QtWidgets.QLayout.SetDefaultConstraint)
-        self.gridLayout.setContentsMargins(10, 10, 10, 10)
-        self.gridLayout.setSpacing(10)
+        self.gridLayout.setContentsMargins(5, 5, 5, 5)
+        self.gridLayout.setSpacing(5)
         self.gridLayout.setObjectName("gridLayout")
         self.btn_sub = QtWidgets.QPushButton(self.gridLayoutWidget)
         self.btn_sub.setMinimumSize(QtCore.QSize(71, 31))
@@ -112,6 +109,14 @@ class Ui_Dialog(object):
         self.btn_clear.setMinimumSize(QtCore.QSize(71, 31))
         self.btn_clear.setObjectName("btn_clear")
         self.gridLayout.addWidget(self.btn_clear, 3, 0, 1, 1)
+        self.btn_clear_all = QtWidgets.QPushButton(self.groupBox)
+        self.btn_clear_all.setGeometry(QtCore.QRect(120, 120, 111, 41))
+        self.btn_clear_all.setObjectName("btn_clear_all")
+        self.line = QtWidgets.QFrame(self.groupBox)
+        self.line.setGeometry(QtCore.QRect(0, 150, 351, 31))
+        self.line.setFrameShape(QtWidgets.QFrame.HLine)
+        self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line.setObjectName("line")
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -142,9 +147,10 @@ class Ui_Dialog(object):
         self.btn_nine.setText(_translate("Dialog", "9"))
         self.btn_seven.setText(_translate("Dialog", "7"))
         self.btn_clear.setText(_translate("Dialog", "C"))
+        self.btn_clear_all.setText(_translate("Dialog", "CE"))
 
     def setOperator(self, op):
-        self.operator = op
+            self.operator = op
 
     def getOperator(self):
         return self.operator
@@ -193,9 +199,13 @@ class Ui_Dialog(object):
 
     def Clear(self):
         print('clear')
-        self.arrayNum.append('c')
+        # self.arrayNum.append('c')
         print(self.arrayNum.pop()) 
         # self.arrayNum.pop()
+
+    def ClearAll(self):
+        print("clear all")
+        self.arrayNum = []
 
     def Sum(self):
         print('sum')
@@ -279,14 +289,17 @@ class Ui_Dialog(object):
         self.btn_eight.clicked.connect(self.Eight)
         self.btn_nine.clicked.connect(self.Nine)
         self.btn_zero.clicked.connect(self.Zero)
-
+        
+        self.btn_clear_all.clicked.connect(self.ClearAll)
         self.btn_clear.clicked.connect(self.Clear)
         self.btn_divide.clicked.connect(self.Divide)
         self.btn_equal.clicked.connect(self.Equal)
         self.btn_mult.clicked.connect(self.Mult)
         self.btn_sub.clicked.connect(self.Sub)
         self.btn_sum.clicked.connect(self.Sum)
-        
+                
+
+
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)

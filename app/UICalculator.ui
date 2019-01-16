@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>384</width>
-    <height>358</height>
+    <width>378</width>
+    <height>401</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,9 +17,9 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>20</y>
+     <y>10</y>
      <width>361</width>
-     <height>321</height>
+     <height>381</height>
     </rect>
    </property>
    <property name="title">
@@ -61,10 +61,10 @@ p, li { white-space: pre-wrap; }
    <widget class="Line" name="line_2">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>0</x>
       <y>110</y>
-      <width>341</width>
-      <height>20</height>
+      <width>361</width>
+      <height>16</height>
      </rect>
     </property>
     <property name="orientation">
@@ -75,9 +75,9 @@ p, li { white-space: pre-wrap; }
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>130</y>
-      <width>338</width>
-      <height>174</height>
+      <y>176</y>
+      <width>341</width>
+      <height>201</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout" rowstretch="0,0,0,0" columnstretch="0,0,0,0">
@@ -85,19 +85,19 @@ p, li { white-space: pre-wrap; }
       <enum>QLayout::SetDefaultConstraint</enum>
      </property>
      <property name="leftMargin">
-      <number>10</number>
+      <number>5</number>
      </property>
      <property name="topMargin">
-      <number>10</number>
+      <number>5</number>
      </property>
      <property name="rightMargin">
-      <number>10</number>
+      <number>5</number>
      </property>
      <property name="bottomMargin">
-      <number>10</number>
+      <number>5</number>
      </property>
      <property name="spacing">
-      <number>10</number>
+      <number>5</number>
      </property>
      <item row="1" column="3">
       <widget class="QPushButton" name="btn_sub">
@@ -308,6 +308,32 @@ p, li { white-space: pre-wrap; }
       </widget>
      </item>
     </layout>
+   </widget>
+   <widget class="QPushButton" name="btn_clear_all">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>120</y>
+      <width>111</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>CE</string>
+    </property>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>150</y>
+      <width>351</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
    </widget>
   </widget>
  </widget>
